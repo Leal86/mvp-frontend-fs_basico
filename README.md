@@ -1,4 +1,4 @@
-# 🛠️ Easy Help — Frontend (MVP)
+# 🛠️ Easy Help - Frontend (MVP)
 
 O **Easy Help** é um MVP acadêmico desenvolvido como uma **Single Page Application (SPA)** utilizando **HTML, CSS e JavaScript puro**, com foco na simulação de um sistema de gerenciamento de chamados.
 
