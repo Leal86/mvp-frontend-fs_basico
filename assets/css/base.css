@@ -1,0 +1,66 @@
+/* ========= RESET BÁSICO ========= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========= VARIÁVEIS ========= */
+:root {
+  --sidebar-start: #0a43b8;
+  --sidebar-end: #0f2f85;
+  --primary-green: #18c58f;
+  --primary-green-dark: #12a877;
+  --bg-page: #f3f6f9;
+  --white: #ffffff;
+  --text-main: #111827;
+  --text-soft: #6b7280;
+  --border-color: #e5e7eb;
+  --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --radius-lg: 18px;
+  --radius-md: 12px;
+}
+
+/* ========= BASE GLOBAL ========= */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* ========= BODY ========= */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-size: 14px;
+}
+
+/* ========= CAMPOS ========= */
+input,
+select,
+textarea,
+button {
+  max-width: 100%;
+  min-width: 0;
+  font: inherit;
+}
+
+.form-control,
+.form-select {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+img,
+table,
+iframe,
+canvas {
+  max-width: 100%;
+}
+
+textarea {
+  max-width: 100%;
+}

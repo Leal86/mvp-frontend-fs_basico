@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Easy Help - Frontend MVP</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+  <div class="app">
+    <!-- OVERLAY MOBILE -->
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-mobile-header">
+        <button id="sidebar-close" class="sidebar-close" type="button" aria-label="Fechar menu">
+          ×
+        </button>
+      </div>
+      <div class="sidebar-brand">
+        <h1>easy help</h1>
+        <p>MVP acadêmico</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <button class="nav-link-custom active" data-section="dashboard">
+          Dashboard
+        </button>
+
+        <button class="nav-link-custom" data-section="departamentos">
+          Departamentos
+        </button>
+
+        <button class="nav-link-custom" data-section="usuarios">
+          Usuários
+        </button>
+
+        <button class="nav-link-custom" data-section="chamados">
+          Chamados
+        </button>
+
+        <button class="nav-link-custom" data-section="sistema">
+          Sobre o sistema
+        </button>
+      </nav>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="main-content">
+      <!-- TOPO -->
+      <header class="topbar">
+        <div class="topbar-row topbar-row-1">
+          <div class="topbar-left">
+            <button id="menu-toggle" class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"
+              aria-controls="sidebar">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+
+            <div class="topbar-welcome">
+              <h4>Bem-vindo ao sistema</h4>
+            </div>
+          </div>
+
+          <div class="topbar-user">
+            <span class="user-name">Alexsander</span>
+            <span class="user-role">Administrador</span>
+          </div>
+        </div>
+
+        <div class="topbar-row topbar-row-2">
+          <div class="topbar-title-block">
+            <h2 id="page-title">Dashboard</h2>
+            <p class="page-subtitle">Sistema de gerenciamento de chamados</p>
+          </div>
+
+          <div class="topbar-link-block">
+            <a href="#" class="topbar-system-link" onclick="showSection('sistema'); return false;">
+              Ver informações do sistema
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <!-- FEEDBACK GLOBAL -->
+      <section class="content-area">
+        <div id="feedback" class="feedback-box d-none"></div>
+
+        <!-- DASHBOARD -->
+        <section id="dashboard" class="app-section">
+          <div class="dashboard-summary-layout">
+            <div class="dashboard-summary-left">
+              <article class="info-card info-card-small">
+                <h3>Total de Departamentos</h3>
+                <p id="total-departamentos">0</p>
+              </article>
+
+              <article class="info-card info-card-small">
+                <h3>Total de Usuários</h3>
+                <p id="total-usuarios">0</p>
+              </article>
+            </div>
+
+            <div class="dashboard-summary-right">
+              <article class="info-card info-card-small info-card-wide">
+                <h3>Total de Chamados</h3>
+                <p id="total-chamados">0</p>
+              </article>
+
+              <div class="dashboard-summary-row">
+                <article class="info-card info-card-small">
+                  <h3>Em aberto</h3>
+                  <p id="total-chamados-abertos">0</p>
+                </article>
+
+                <article class="info-card info-card-small">
+                  <h3>Em andamento</h3>
+                  <p id="total-chamados-andamento">0</p>
+                </article>
+              </div>
+
+              <div class="dashboard-summary-row">
+                <article class="info-card info-card-small">
+                  <h3>Em espera</h3>
+                  <p id="total-chamados-espera">0</p>
+                </article>
+
+                <article class="info-card info-card-small">
+                  <h3>Resolvidos</h3>
+                  <p id="total-chamados-resolvidos">0</p>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header">
+              <h3>Chamados recentes</h3>
+            </div>
+
+            <div class="dashboard-table-wrapper">
+              <table class="dashboard-table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Usuário</th>
+                    <th>Status</th>
+                    <th>Prioridade</th>
+                  </tr>
+                </thead>
+                <tbody id="dashboard-chamados-recentes">
+                  <tr>
+                    <td colspan="5" class="empty-table">Nenhum chamado encontrado.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="panel dashboard-footer-info">
+            <p class="dashboard-footer-text">
+              Este MVP foi desenvolvido por <strong>Alexsander Leal da Silva</strong> como parte da disciplina
+              Desenvolvimento Full Stack Básico, demonstrando a construção de uma SPA integrada a uma API REST em
+              Flask.
+            </p>
+
+            <div class="dashboard-footer-links">
+              <a href="COLE_AQUI_O_LINK_DO_SEU_GITHUB" target="_blank" rel="noopener noreferrer">
+                GitHub do desenvolvedor
+              </a>
+              <a href="COLE_AQUI_O_LINK_DO_REPOSITORIO_FRONTEND" target="_blank" rel="noopener noreferrer">
+                Repositório do frontend
+              </a>
+              <a href="https://github.com/Leal86/mvp-backend-fs_basico" target="_blank" rel="noopener noreferrer">
+                Repositório do backend
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- DEPARTAMENTOS -->
+        <section id="departamentos" class="app-section d-none">
+          <div class="section-grid">
+            <div class="panel">
+              <h3>Novo Departamento</h3>
+
+              <form id="form-departamento">
+                <div class="mb-3">
+                  <label for="dep-nome" class="form-label">Nome do Departamento</label>
+                  <input type="text" id="dep-nome" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="dep-sigla" class="form-label">Sigla</label>
+                  <input type="text" id="dep-sigla" class="form-control" required maxlength="10">
+                </div>
+
+                <div class="mb-3">
+                  <label for="dep-telefone" class="form-label">Telefone</label>
+                  <input type="text" id="dep-telefone" class="form-control" required>
+                </div>
+
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-save">Salvar</button>
+                  <button type="reset" class="btn btn-cancel">Cancelar</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="panel">
+              <div class="panel-header panel-header-column">
+                <h3>Departamentos cadastrados</h3>
+
+                <div class="filters">
+                  <input type="text" id="busca-departamentos" class="form-control"
+                    placeholder="Buscar por nome, sigla ou telefone">
+
+                  <button id="btn-carregar-departamentos" class="btn btn-outline-secondary btn-sm" type="button">
+                    Atualizar
+                  </button>
+                </div>
+              </div>
+
+              <div id="lista-departamentos" class="list-area">
+                <p class="empty-state">Nenhum departamento cadastrado.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- USUÁRIOS -->
+        <section id="usuarios" class="app-section d-none">
+          <div class="section-grid">
+            <div class="panel">
+              <h3>Novo Usuário</h3>
+
+              <form id="form-usuario">
+                <div class="mb-3">
+                  <label for="usr-nome" class="form-label">Nome</label>
+                  <input type="text" id="usr-nome" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="usr-matricula" class="form-label">Matrícula</label>
+                  <input type="text" id="usr-matricula" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="usr-funcao" class="form-label">Função</label>
+                  <input type="text" id="usr-funcao" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="usr-departamento" class="form-label">Departamento</label>
+                  <select id="usr-departamento" class="form-select" required>
+                    <option value="">Selecione um departamento</option>
+                  </select>
+                </div>
+
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-save">Salvar</button>
+                  <button type="reset" class="btn btn-cancel">Cancelar</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="panel">
+              <div class="panel-header panel-header-column">
+                <h3>Usuários cadastrados</h3>
+
+                <div class="filters">
+                  <input type="text" id="busca-usuarios" class="form-control"
+                    placeholder="Buscar por nome, matrícula, função ou departamento">
+
+                  <button id="btn-carregar-usuarios" class="btn btn-outline-secondary btn-sm" type="button">
+                    Atualizar
+                  </button>
+                </div>
+              </div>
+
+              <div id="lista-usuarios" class="list-area">
+                <p class="empty-state">Nenhum usuário cadastrado.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CHAMADOS -->
+        <section id="chamados" class="app-section d-none">
+          <div class="section-grid">
+            <div class="panel">
+              <h3>Novo Chamado</h3>
+
+              <form id="form-chamado">
+                <div class="mb-3">
+                  <label for="cha-titulo" class="form-label">Título</label>
+                  <input type="text" id="cha-titulo" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="cha-descricao" class="form-label">Descrição</label>
+                  <textarea id="cha-descricao" class="form-control" rows="4" required></textarea>
+                </div>
+
+                <div class="mb-3">
+                  <label for="cha-status" class="form-label">Status</label>
+                  <input type="text" id="cha-status" class="form-control input-readonly" value="Aberto" readonly>
+                  <small class="status-helper">
+                    O status inicial do chamado é definido automaticamente como "Aberto".
+                  </small>
+                </div>
+
+                <div class="mb-3">
+                  <label for="cha-prioridade" class="form-label">Prioridade</label>
+                  <select id="cha-prioridade" class="form-select" required>
+                    <option value="baixa">Baixa</option>
+                    <option value="media">Média</option>
+                    <option value="alta">Alta</option>
+                  </select>
+                </div>
+
+                <div class="mb-3">
+                  <label for="cha-usuario" class="form-label">Usuário</label>
+                  <select id="cha-usuario" class="form-select" required>
+                    <option value="">Selecione um usuário</option>
+                  </select>
+                </div>
+
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-save">Salvar</button>
+                  <button type="reset" class="btn btn-cancel">Cancelar</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="panel">
+              <div class="panel-header panel-header-column">
+                <h3>Chamados cadastrados</h3>
+
+                <div class="filters">
+                  <input type="text" id="busca-chamados" class="form-control"
+                    placeholder="Buscar por título, descrição, usuário e departamento">
+
+                  <select id="filtro-status" class="form-select">
+                    <option value="">Todos os status</option>
+                    <option value="aberto">Aberto</option>
+                    <option value="em andamento">Em andamento</option>
+                    <option value="em espera">Em espera</option>
+                    <option value="resolvido">Resolvido</option>
+                    <option value="fechado">Fechado</option>
+                  </select>
+
+                  <select id="filtro-prioridade" class="form-select">
+                    <option value="">Todas as prioridades</option>
+                    <option value="baixa">Baixa</option>
+                    <option value="media">Média</option>
+                    <option value="alta">Alta</option>
+                  </select>
+
+                  <button id="btn-carregar-chamados" class="btn btn-outline-secondary btn-sm" type="button">
+                    Atualizar
+                  </button>
+                </div>
+              </div>
+
+              <div id="lista-chamados" class="list-area">
+                <p class="empty-state">Nenhum chamado cadastrado.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- INFORMAÇÕES DO SISTEMA -->
+        <section id="sistema" class="app-section d-none">
+          <div class="system-info-grid">
+            <div class="panel">
+              <h3>Sobre o sistema</h3>
+              <p>
+                O Easy Help é um MVP acadêmico desenvolvido para demonstrar a separação entre frontend e backend, com
+                consumo de API REST em Flask.
+              </p>
+              <p>
+                Além disso, o sistema possui um modo offline com simulação de API em memória, permitindo a execução
+                completa sem backend, ideal para demonstração.
+              </p>
+            </div>
+
+            <div class="panel">
+              <h3>Tecnologias utilizadas</h3>
+              <ul class="system-info-list">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript puro</li>
+                <li>Bootstrap</li>
+                <li>Python com Flask</li>
+                <li>SQLite</li>
+                <li>Swagger / OpenAPI</li>
+              </ul>
+            </div>
+
+            <div class="panel">
+              <h3>Fluxo do sistema</h3>
+              <ul class="system-info-list">
+                <li>Cadastrar departamento</li>
+                <li>Cadastrar usuário vinculado ao departamento</li>
+                <li>Cadastrar chamado vinculado ao usuário</li>
+                <li>Acompanhar andamento e atualizar status</li>
+                <li>Resolver, reabrir ou fechar atendimento</li>
+              </ul>
+            </div>
+
+            <div class="panel">
+              <h3>Objetivo do MVP</h3>
+              <p>
+                Demonstrar uma SPA funcional, com integração real com API,
+                organização visual, interatividade e aderência aos requisitos da disciplina.
+              </p>
+            </div>
+          </div>
+        </section>
+      </section>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="./assets/js/api.js"></script>
+  <script src="./assets/js/app.js"></script>
+  <script src="./assets/js/navigation.js"></script>
+  <script src="./assets/js/dashboard.js"></script>
+  <script src="./assets/js/departamentos.js"></script>
+  <script src="./assets/js/usuarios.js"></script>
+  <script src="./assets/js/chamados.js"></script>
+  <script src="./assets/js/main.js"></script>
+</body>
+
+</html>

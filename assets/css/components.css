@@ -1,0 +1,213 @@
+/* ========= MENSAGEM GLOBAL ========= */
+.feedback-box {
+  margin-bottom: 18px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.feedback-success {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.feedback-error {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+/* ========= PAINÉIS ========= */
+.panel {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 15px;
+  box-shadow: var(--shadow-soft);
+  height: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.panel h3 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  font-weight: lighter;
+}
+
+.panel h4 {
+  margin-top: 18px;
+  margin-bottom: 10px;
+}
+
+/* ========= BOTÕES DO MENU ========= */
+.nav-link-custom {
+  border: none;
+  background: transparent;
+  color: var(--white);
+  text-align: left;
+  padding: 16px 18px;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  width: 100%;
+  max-width: 100%;
+}
+
+.nav-link-custom:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.nav-link-custom.active {
+  background: linear-gradient(90deg, #2de0c4, #58d7b8);
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* ========= CABEÇALHO DOS PAINÉIS ========= */
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  min-width: 0;
+}
+
+.panel-header-column {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+  margin-bottom: 14px;
+  min-width: 0;
+}
+
+/* ========= ITENS DAS LISTAS ========= */
+.list-card {
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 12px 14px;
+  background-color: #f9fbfd;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+.list-card h4 {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.list-card p {
+  margin-bottom: 4px;
+  color: #374151;
+  word-break: break-word;
+  line-height: 1.35;
+  font-size: 0.95rem;
+}
+
+.list-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* ========= BADGES ========= */
+.badge-custom {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.badge-status-aberto {
+  background-color: #bbf7d0;
+  color: #166534;
+}
+
+.badge-status-andamento {
+  background-color: #fed7aa;
+  color: #9a3412;
+}
+
+.badge-status-espera {
+  background-color: #fde68a;
+  color: #92400e;
+}
+
+.badge-status-concluido {
+  background-color: #bfdbfe;
+  color: #1d4ed8;
+}
+
+.badge-status-fechado {
+  background-color: #d1d5db;
+  color: #374151;
+}
+
+.badge-prioridade-alta {
+  background-color: #fecaca;
+  color: #b91c1c;
+}
+
+.badge-prioridade-media {
+  background-color: #fde68a;
+  color: #92400e;
+}
+
+.badge-prioridade-baixa {
+  background-color: #bbf7d0;
+  color: #166534;
+}
+
+/* ========= BOTÕES ========= */
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-save,
+.btn-cancel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 22px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.btn-save {
+  background: linear-gradient(90deg, #18c58f, #12b981);
+  color: white;
+  border: none;
+}
+
+.btn-save:hover {
+  background: linear-gradient(90deg, #14b884, #0fa574);
+  color: white;
+}
+
+.btn-save:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.btn-cancel {
+  background: linear-gradient(90deg, #94a3b8, #64748b);
+  color: white;
+  border: none;
+}
+
+.btn-cancel:hover {
+  background: linear-gradient(90deg, #7f8ea4, #59677a);
+  color: white;
+}
+
+.btn-cancel:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
